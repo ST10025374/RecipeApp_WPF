@@ -1,0 +1,73 @@
+﻿<Window x:Class="WPFdemo.StoreRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFdemo"
+        mc:Ignorable="d"
+        Title="Store Recipe" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="191*"/>
+            <ColumnDefinition Width="609*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="Recipe">
+                <MenuItem Header="Store Recipe" Click="StoreRecipe_Click"/>
+                <MenuItem Header="Display Recipe" Click="DisplayRecipe_Click"/>
+                <MenuItem Header="Scale Up Recipe" Click="ScaleUpRecipe_Click"/>
+                <MenuItem Header="Delete Recipe" Click="DeleteRecipe_Click"/>
+                <MenuItem Header="Filter Recipes" Click="FilterRecipes_Click"/>
+                <MenuItem Header="Create Menu" Click="CreateMenu_Click"/>
+            </MenuItem>
+            <MenuItem Header="Exit" Click="Exit_Click"/>
+        </Menu>
+        <Label Content="Store Recipe" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="76"/>
+        <Label Content="Enter name of recipe:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,-0.268" Grid.Column="1" Height="26" Width="122"/>
+        <Label Content="Enter number of ingredients:" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
+        <Label Content="Ingredient name:" HorizontalAlignment="Left" Margin="110,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,-0.461" Grid.Column="2" Height="26" Width="100"/>
+        <Label Content="Enter DETAILS for Ingredient: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="215,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" RenderTransformOrigin="0.725,0.558"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="19,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" TextChanged="TextBox_TextChanged_RecipeName"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="19,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38" Height="18"/>
+        <Label Content="Unit of measurement:" HorizontalAlignment="Left" Margin="86,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,-0.461" Grid.Column="2" Height="26" Width="124"/>
+        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="215,180,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.833,0.456">
+            <ComboBoxItem/> Gram (g)
+            <ComboBoxItem/> Tablespoon (tbsp)
+            <ComboBoxItem/> Cup (c)
+        </ComboBox>
+        <Label Grid.Column="2" Content="Quantity:" HorizontalAlignment="Left" Margin="148,201,0,0" VerticalAlignment="Top" Height="26" Width="58" RenderTransformOrigin="0.483,1.002"/>
+        <Label Grid.Column="2" Content="Calories:" HorizontalAlignment="Left" Margin="151,225,0,0" VerticalAlignment="Top" Height="26" Width="55" RenderTransformOrigin="0.618,0.348"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="214,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" IsManipulationEnabled="True"/>
+        <Label Grid.Column="2" Content="Food group:" HorizontalAlignment="Left" Margin="140,251,0,0" VerticalAlignment="Top" Height="26" Width="75"/>
+        <ComboBox Grid.Column="2" HorizontalAlignment="Left" Margin="215,258,0,0" VerticalAlignment="Top" Width="120" Height="22">
+            <ComboBoxItem/> Vegetable
+            <ComboBoxItem/> Fruit
+            <ComboBoxItem/> Grain
+            <ComboBoxItem/> Dairy
+            <ComboBoxItem/> Protein
+            <ComboBoxItem/> Spice
+            <ComboBoxItem/> Herb
+            <ComboBoxItem/> Oil
+            <ComboBoxItem/> Water
+        </ComboBox>
+        <Label Content="Enter number of STEPS:" HorizontalAlignment="Left" Margin="17,279,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="138"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="23,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38" Height="18"/>
+        <Label Content="Enter description of STEP:" HorizontalAlignment="Left" Margin="16,305,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="23,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Height="49" Margin="17,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="429" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="2" Content="Save " HorizontalAlignment="Left" Margin="215,64,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button Grid.Column="2" Content="Confirm" HorizontalAlignment="Left" Margin="215,94,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button Grid.Column="2" Content="Save" HorizontalAlignment="Left" Margin="348,259,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button Grid.Column="2" Content="Confirm" HorizontalAlignment="Left" Margin="69,281,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button Grid.Column="2" Content="Save" HorizontalAlignment="Left" Margin="69,308,0,0" VerticalAlignment="Top" Width="110" Height="20"/>
+        <Button Grid.Column="1" Content="Save recipe" HorizontalAlignment="Left" Margin="17,390,0,0" VerticalAlignment="Top" Width="110" Height="27"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="215,207,0,0" TextWrapping="Wrap" Text="" Width="38" Height="18" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="0" HorizontalAlignment="Left" Margin="172,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+
+
+    </Grid>
+
+</Window>
