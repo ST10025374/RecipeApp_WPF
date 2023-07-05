@@ -59,6 +59,7 @@
       <DependentUpon>DeleteRecipeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="IngredientsClass.cs" />
+    <Compile Include="RecipeClass.cs" />
     <Compile Include="ScaleUpRecipeWindow.xaml.cs">
       <DependentUpon>ScaleUpRecipeWindow.xaml</DependentUpon>
     </Compile>
