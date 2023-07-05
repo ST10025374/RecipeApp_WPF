@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 namespace WPFdemo
 {
-    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,7 +22,7 @@ namespace WPFdemo
     {
         //-------------------------------------------------------------------//
         /// <summary>
-        /// Main Window
+        /// Default Constructor
         /// </summary>
         public MainWindow()
         {
@@ -44,7 +43,7 @@ namespace WPFdemo
 
         //-------------------------------------------------------------------//
         /// <summary>
-        /// 
+        /// Display Recipe Window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,33 +54,63 @@ namespace WPFdemo
         }
 
         //-------------------------------------------------------------------//
+        /// <summary>
+        /// Scale Up Recipe Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ScaleUpRecipe_Click(object sender, RoutedEventArgs e)
         {
             ScaleUpRecipeWindow scaleUpRecipeWindow = new ScaleUpRecipeWindow();
             scaleUpRecipeWindow.Show();
         }
 
+        //-------------------------------------------------------------------//
+        /// <summary>
+        /// Delete Recipe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void DeleteRecipe_Click(object sender, RoutedEventArgs e)
         {
             DeleteRecipeWindow deleteRecipeWindow = new DeleteRecipeWindow();
             deleteRecipeWindow.ShowDialog();
         }
-        
+
+        //-------------------------------------------------------------------//
+        /// <summary>
+        /// Filter Recipe Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FilterRecipes_Click(object sender, RoutedEventArgs e)
         {
             //FilterRecipesWindow filterRecipesWindow = new FilterRecipesWindow();
             //filterRecipesWindow.Show();
         }
-        
+
+        //-------------------------------------------------------------------//
+        /// <summary>
+        /// Create Menu Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateMenu_Click(object sender, RoutedEventArgs e)
         {
             //CreateMenuWindow createMenuWindow = new CreateMenuWindow();
             //createMenuWindow.Show();
         }
-        
+
+        //-------------------------------------------------------------------//
+        /// <summary>
+        /// Exit Program Option Window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
     }
 }
+//-----------------------------------------< END >--------------------------------------//
