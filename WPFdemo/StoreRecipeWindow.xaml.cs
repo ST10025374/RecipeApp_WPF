@@ -55,10 +55,15 @@ namespace WPFdemo
         public string RecipeStepDescription { get; set; }
 
         /// <summary>
-        /// Store currnt recipe step to display in label
+        /// Store current recipe step to display in label
         /// </summary>
         public int LabelDisplayStepNum = 1;
-      
+
+        /// <summary>
+        /// Store current Ing Num to display in label
+        /// </summary>
+        public int LabelDisplayIngNum = 1;
+
         /// <summary>
         /// List to store details of each ingredient in recipe
         /// </summary>
@@ -155,8 +160,7 @@ namespace WPFdemo
 
         //-------------------------------------------------------------------//
         /// <summary>
-        /// Recipe Name TextBox Changed event
-        /// Input Validation Implemented
+        /// Recipe Name TextBox Changed event       
         /// Method Gets Text from TextBox to Save
         /// </summary>
         /// <param name="sender"></param>
@@ -166,75 +170,46 @@ namespace WPFdemo
             // Get the current text from the TextBox
             string recipeName = txtRecipeName.Text;
 
-            // Perform validation
-            if (string.IsNullOrWhiteSpace(recipeName))
-            {
-                MessageBox.Show("Recipe name cannot be empty.");
-            }
-            else
-            {
-                // Valid input, do something with the recipe name
-                this.RecipeName = recipeName;
-            }
+            this.RecipeName = recipeName;           
         }
 
         //-------------------------------------------------------------------//
         /// <summary>
         /// Recipe Name TextBox Changed event
-        /// Input Validation Implemented
         /// Method makes label for ingrdients to change
         /// Method Validates Input and displays error message
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtIngredientNum_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //int ingredientNum = int.Parse(txtIngredient.Text);
-
-            //New code
+        {       
             if (int.TryParse(txtIngredient.Text, out int ingredientNum))
             {
+                this.RecipeIngNum = int.Parse(txtIngredient.Text);
                 // Update the label based on the ingredient number
-                if (ingredientNum == 0 && !string.IsNullOrEmpty(txtIngredient.Text) && !int.TryParse(txtIngredient.Text, out _))
+                if (this.RecipeIngNum == 0 && !string.IsNullOrEmpty(txtIngredient.Text) && !int.TryParse(txtIngredient.Text, out _))
                 {
-                    lblMessage.Content = "0";
+                    lblIngNumMessage.Content = "0";
                 }
                 else
                 {
-                    lblMessage.Content = $"{ingredientNum}";
-
-                    SaveIngredientNum(ingredientNum);
+                    lblIngNumMessage.Content = $"{this.LabelDisplayIngNum}";                 
                 }
-            }
-            else
-            {
-                //lblMessage.Content = "Invalid ingredient number.";
-                MessageBox.Show("Invalid ingredient number.");
-            }
-
-            //Old code
-            // Update the label based on the ingredient text
-           /* if (string.IsNullOrEmpty(ingredientNum))
-            {
-                lblMessage.Content = "0";
-            }
-            else
-            {
-                lblMessage.Content = $"{ingredientNum}";
-
-                SaveIngredientNum(ingredientNum);
-
-            } */
+            }                           
         }
 
         //-------------------------------------------------------------------//
         /// <summary>
-        /// Method Saves Number of Ingredients Selected by User
+        /// Store Name of Ingredient
         /// </summary>
-        /// <param name="IngNum"></param>
-        public void SaveIngredientNum(int IngNum)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIngName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.RecipeIngNum = IngNum;
+            // Get the current text from the TextBox
+            string IngName = txtIngName.Text;                         
+            
+            this.RecipeIngName = IngName;            
         }
 
         //-------------------------------------------------------------------//
@@ -262,15 +237,11 @@ namespace WPFdemo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtBoxQuantityTextChange(object sender, TextChangedEventArgs e)
-        {      
+        {
             if (int.TryParse(txtBoxQuantity.Text, out int ingredientQuantity))
             {
                 this.RecipeIngQuantity = int.Parse(txtBoxQuantity.Text);
-            }
-            else
-            {               
-                MessageBox.Show("Invalid ingredient quantity.");
-            }
+            }          
         }
 
         //-------------------------------------------------------------------//
@@ -284,11 +255,7 @@ namespace WPFdemo
             if (int.TryParse(txtBoxCalories.Text, out int ingredientCalories))
             {
                 this.RecipeIngCalories = int.Parse(txtBoxCalories.Text);
-            }
-            else
-            {
-                MessageBox.Show("Invalid ingredient calorie");
-            }
+            }           
         }
 
         //-------------------------------------------------------------------//
@@ -330,6 +297,14 @@ namespace WPFdemo
             NewIngredient.IngredientFoodGroup = this.RecipeIngFoodGroup;
 
             IngredientsList.Add(NewIngredient);
+
+            this.LabelDisplayIngNum++;
+
+            lblIngNumMessage.Content = $"{this.LabelDisplayIngNum}";
+            //Clear txtBoxes
+            txtIngName.Text = string.Empty;    
+            txtBoxQuantity.Text = string.Empty;
+            txtBoxCalories.Text = string.Empty;
         }
 
         //-------------------------------------------------------------------//
@@ -353,10 +328,6 @@ namespace WPFdemo
                 {
                     lblStepMessage.Content = $"{this.LabelDisplayStepNum}";
                 }
-            }
-            else
-            {
-                MessageBox.Show("Invalid Step number");
             }
         }
 
@@ -407,7 +378,16 @@ namespace WPFdemo
             NewRecipeObj.IngredientsList = this.IngredientsList;
 
             this.RecipeObj.RecipeList.Add(NewRecipeObj);
-        }
+
+            //Clear txt
+            txtRecipeName.Text = string.Empty;
+            txtIngredient.Text = string.Empty;
+            txtIngName.Text = string.Empty;
+            txtBoxQuantity.Text = string.Empty;
+            txtBoxCalories.Text = string.Empty;
+            txtBoxStepsNum.Text = string.Empty;
+            txtBoxDescription.Text = string.Empty;
+        }      
     }
 }
 //-----------------------------------------< END >--------------------------------------//    
