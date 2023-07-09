@@ -22,7 +22,7 @@ namespace WPFdemo
             /// Store Ingredient Quantity
             /// </summary>
             public double IngredientQuantity { get; set; } = 0.0;
-
+            
             /// <summary>
             /// Store Ingredient Unit Of Measurement
             /// </summary>

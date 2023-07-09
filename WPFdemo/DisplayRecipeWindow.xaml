@@ -19,18 +19,18 @@
             </MenuItem>
             <MenuItem Header="Exit" />
         </Menu>
-        <Button Content="Display Recipe" HorizontalAlignment="Left" Margin="400,124,0,0" VerticalAlignment="Top" Width="120" Click="DisplayRecipeButton_Click"/>
+        <Button Content="Display Recipe" HorizontalAlignment="Left" Margin="234,107,0,0" VerticalAlignment="Top" Width="120" Click="DisplayRecipeButton_Click"/>
 
-        <ListView HorizontalAlignment="Left" Margin="35,58,0,0" VerticalAlignment="Top" Width="350" Height="200" ItemsSource="{Binding Recipes}">
+        <ListView HorizontalAlignment="Left" Margin="35,58,0,0" VerticalAlignment="Top" Width="171" Height="200" ItemsSource="{Binding Recipes}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Recipe Name" DisplayMemberBinding="{Binding Name}" Width="150"/>
-                    <GridViewColumn Header="Number of Ingredients" DisplayMemberBinding="{Binding NumberOfIngredients}" Width="150"/>
+              
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Enter recipe number:" HorizontalAlignment="Left" Margin="400,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.237,0.579"/>
-        <TextBox HorizontalAlignment="Left" Margin="400,101,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.683,0.448"/>
+        <Label Content="Enter recipe number:" HorizontalAlignment="Left" Margin="234,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.237,0.579"/>
+        <TextBox HorizontalAlignment="Left" Margin="234,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.683,0.448"/>
 
     </Grid>
 </Window>

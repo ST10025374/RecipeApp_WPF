@@ -58,12 +58,7 @@ namespace WPFdemo
         /// Store currnt recipe step to display in label
         /// </summary>
         public int LabelDisplayStepNum = 1;
-
-        /// <summary>
-        /// List to store each recipe 
-        /// </summary>
-        public List<RecipeClass> RecipeList = new List<RecipeClass>();
-
+      
         /// <summary>
         /// List to store details of each ingredient in recipe
         /// </summary>
@@ -73,6 +68,11 @@ namespace WPFdemo
         /// List to store recipe Steps Descriptions
         /// </summary>
         public List<string> StepList = new List<string>();
+
+        /// <summary>
+        /// Recipe Object
+        /// </summary>
+        public RecipeClass RecipeObj = new RecipeClass();
 
         /// <summary>
         /// Default Constructor
@@ -406,7 +406,7 @@ namespace WPFdemo
             NewRecipeObj.StepDescriptionsList = this.StepList;
             NewRecipeObj.IngredientsList = this.IngredientsList;
 
-            this.RecipeList.Add(NewRecipeObj);
+            this.RecipeObj.RecipeList.Add(NewRecipeObj);
         }
     }
 }

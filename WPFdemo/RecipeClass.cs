@@ -23,6 +23,11 @@ namespace WPFdemo
         /// </summary>
         public List<IngredientsClass> IngredientsList = new List<IngredientsClass>();
 
+        /// <summary>
+        /// List to store each recipe 
+        /// </summary>
+        public List<RecipeClass> RecipeList = new List<RecipeClass>();
+
         //---------------------------------------------------------------------------------------//
         /// <summary>
         /// Default Constructor
