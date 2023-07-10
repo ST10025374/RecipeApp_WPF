@@ -20,7 +20,7 @@ namespace WPFdemo
 
         //-----------------------------------------------------------//
         /// <summary>
-        /// 
+        /// Default Constructor
         /// </summary>
         /// <param name="recipe"></param>
         /// <param name="book"></param>
@@ -58,3 +58,4 @@ namespace WPFdemo
         }
     }
 }
+//--------------------------------------< END >----------------------------------------//

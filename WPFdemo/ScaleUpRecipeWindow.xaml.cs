@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace WPFdemo
@@ -34,6 +37,56 @@ namespace WPFdemo
 
         //-----------------------------------------------------------//
         /// <summary>
+        /// Button to Scale Up recipe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnScaleUpRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            int RecNum = int.Parse(txtRecipeNum.Text);
+
+            double ScaleFactor = double.Parse(txtScaleUpFactor.Text);
+
+            for (int i = 0; i < _recipes[RecNum - 1].IngredientsList.Count; i++)
+            {
+                int number = i + 1;
+
+                string output = number + ": " + _recipes[RecNum - 1].IngredientsList[i].IngredientName
+                       + " " + _recipes[RecNum - 1].IngredientsList[i].IngredientFoodGroup
+                       + " " + (_recipes[RecNum - 1].IngredientsList[i].IngredientQuantity * ScaleFactor)
+                       + " " + _recipes[RecNum - 1].IngredientsList[i].UnitOfMeasurement
+                       + " Calories: " + _recipes[RecNum - 1].IngredientsList[i].IngredientCalories;
+
+                lstRecipeScaleUp.Items.Add(output);;
+            } 
+        }
+
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Allow only numbers to be entered
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtRecipeNum_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Open Main When Window Closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIngNum_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        //-----------------------------------------------------------//
+        /// <summary>
         /// Open Main When Window Closed
         /// </summary>
         /// <param name="sender"></param>
@@ -47,3 +100,38 @@ namespace WPFdemo
     }
 }
 //--------------------------------------< END >----------------------------------------//
+/*
+int IngredientsArrayLength = this.RecipeArray[Option].IngredientsArray.Count;
+
+for (int i = 0; i < IngredientsArrayLength; i++)
+{
+    string IngName = this.RecipeArray[Option].IngredientsArray[i].IngredientName;
+    double IngQuantity = (this.RecipeArray[Option].IngredientsArray[i].IngredientQuantity) * Constant;
+
+    string IngUnit = this.RecipeArray[Option].IngredientsArray[i].UnitOfMeasurement;
+
+    if ((IngQuantity < 1) && IngUnit.Equals("C"))
+    {
+        double IngQuantityCalc = IngQuantity * 16;
+
+        IngQuantity = IngQuantityCalc;
+
+        IngUnit = "tbsp";
+    }
+
+    if ((IngQuantity >= 16) && IngUnit.Equals("tbsp"))
+    {
+        double IngQuantityCalc = IngQuantity / 16;
+
+        IngQuantity = IngQuantityCalc;
+
+        IngUnit = "C";
+    }
+
+    Console.ForegroundColor = ConsoleColor.Green;
+
+    Console.WriteLine("\nIngredient " + (i + 1) + " : "
+        + IngName + " -> "
+        + IngQuantity.ToString("0.0") + " "
+        + IngUnit, Console.ForegroundColor);    
+*/

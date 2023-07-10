@@ -187,16 +187,41 @@ namespace WPFdemo
             Hide();
         }
 
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Allow only Numbers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtBoxQuantity_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Allow only Numbers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtBoxCalories_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Open Main When Window Closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(_recipes);
+            mainWindow.Show();
+            Hide();
         }
     }
 }

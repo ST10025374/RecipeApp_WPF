@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFdemo"
         mc:Ignorable="d"
-        Title="ScaleUpRecipeWindow" Height="450" Width="800">
+        Title="ScaleUpRecipeWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <Button Content="Scale Up Recipe" HorizontalAlignment="Left" Margin="72,137,0,0" VerticalAlignment="Top" Width="120"/>
-        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="211,47,419,227"/>
+        <Button x:Name="btnScaleUpRecipe" Content="Scale Up Recipe" HorizontalAlignment="Left" Margin="72,137,0,0" VerticalAlignment="Top" Width="120" Click="btnScaleUpRecipe_Click"/>
+        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="211,47,419,277"/>
         <Label Content="Enter Scale Factor: &#xD;&#xA;Example: 3 " HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top" Width="106" Height="49"/>
-        <TextBox x:Name="ScaleFactorTextBox" HorizontalAlignment="Left" Margin="166,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448"/>
+        <TextBox x:Name="txtRecipeNum" HorizontalAlignment="Left" Margin="166,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
         <Label Content="Enter Recipe Number: " HorizontalAlignment="Left" Margin="37,46,0,0" VerticalAlignment="Top" Width="124" Height="37"/>
-        <TextBox x:Name="ScaleFactorTextBox_Copy" HorizontalAlignment="Left" Margin="166,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448"/>
-        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="211,19,0,0" VerticalAlignment="Top" Width="124" Height="37"/>
+        <TextBox x:Name="txtScaleUpFactor" HorizontalAlignment="Left" Margin="166,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448" PreviewTextInput="txtIngNum_PreviewTextInput"/>
+        <Label Content="Recipes" HorizontalAlignment="Left" Margin="211,19,0,0" VerticalAlignment="Top" Width="124" Height="29"/>
+        <ListBox x:Name="lstRecipeScaleUp" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,48,230,276"/>
+        <Label Content="Scaled Up " HorizontalAlignment="Left" Margin="400,19,0,0" VerticalAlignment="Top" Width="124" Height="29"/>
     </Grid>
 
 </Window>
