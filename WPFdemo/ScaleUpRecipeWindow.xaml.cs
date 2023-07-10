@@ -27,6 +27,9 @@ namespace WPFdemo
 
             _recipes = book;
 
+            //Sort Alphabetically
+            _recipes.Sort((Recipe1, Recipe2) => string.Compare(Recipe1.RecipeName, Recipe2.RecipeName));
+
             for (int i = 0; i < _recipes.Count; i++)
             {
                 int number = i + 1;
@@ -100,38 +103,3 @@ namespace WPFdemo
     }
 }
 //--------------------------------------< END >----------------------------------------//
-/*
-int IngredientsArrayLength = this.RecipeArray[Option].IngredientsArray.Count;
-
-for (int i = 0; i < IngredientsArrayLength; i++)
-{
-    string IngName = this.RecipeArray[Option].IngredientsArray[i].IngredientName;
-    double IngQuantity = (this.RecipeArray[Option].IngredientsArray[i].IngredientQuantity) * Constant;
-
-    string IngUnit = this.RecipeArray[Option].IngredientsArray[i].UnitOfMeasurement;
-
-    if ((IngQuantity < 1) && IngUnit.Equals("C"))
-    {
-        double IngQuantityCalc = IngQuantity * 16;
-
-        IngQuantity = IngQuantityCalc;
-
-        IngUnit = "tbsp";
-    }
-
-    if ((IngQuantity >= 16) && IngUnit.Equals("tbsp"))
-    {
-        double IngQuantityCalc = IngQuantity / 16;
-
-        IngQuantity = IngQuantityCalc;
-
-        IngUnit = "C";
-    }
-
-    Console.ForegroundColor = ConsoleColor.Green;
-
-    Console.WriteLine("\nIngredient " + (i + 1) + " : "
-        + IngName + " -> "
-        + IngQuantity.ToString("0.0") + " "
-        + IngUnit, Console.ForegroundColor);    
-*/

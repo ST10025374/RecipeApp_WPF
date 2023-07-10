@@ -7,10 +7,25 @@
         mc:Ignorable="d"
         Title="DisplayOneRecipe" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <ListBox x:Name="lstIngrediants" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,61,566,133"/>
-        <ListBox x:Name="lstSteps" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="248,61,310,133"/>
-        <Label Content="Recipe Ingredients" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
-        <Label Content="Recipe Steps" HorizontalAlignment="Left" Margin="248,30,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lstIngrediants" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="353,55,30,48"/>
+        <ListBox x:Name="lstSteps" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,55,452,48"/>
+        <Label Content="Recipe Ingredients" HorizontalAlignment="Left" Margin="353,24,0,0" VerticalAlignment="Top"/>
+        <Label Content="Recipe Steps" HorizontalAlignment="Left" Margin="48,24,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,227,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,287,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,307,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,327,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,347,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,63,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="15,203,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,2.056"/>
 
     </Grid>
 </Window>

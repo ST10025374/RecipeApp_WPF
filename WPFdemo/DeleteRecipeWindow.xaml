@@ -5,23 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFdemo"
         mc:Ignorable="d"
-        Title="DeleteRecipeWindow" Height="450" Width="800">
+        Title="DeleteRecipeWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <Menu Grid.ColumnSpan="3" RenderTransformOrigin="0.648,0.5" Height="434" VerticalAlignment="Top">
-            <MenuItem Header="Recipe">
-                <MenuItem Header="Store Recipe"/>
-                <MenuItem Header="Display Recipe"/>
-                <MenuItem Header="Scale Up Recipe"/>
-                <MenuItem Header="Delete Recipe"/>
-                <MenuItem Header="Filter Recipes" />
-                <MenuItem Header="Create Menu"/>
-            </MenuItem>
-            <MenuItem Header="Exit" />
-        </Menu>
+        
 
-        <Button Content="Delete Recipe" HorizontalAlignment="Left" Margin="27,103,0,0" VerticalAlignment="Top" Width="120" Click="DeleteButton_Click"/>
+        <Button x:Name="btnDeleteRecipe" Content="DELETE " HorizontalAlignment="Left" Margin="280,45,0,0" VerticalAlignment="Top" Width="77" Click="DeleteButton_Click" Height="32"/>
 
-        <Label Content="Enter the recipe name to delete:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="RecipeNameTextBox" HorizontalAlignment="Left" Margin="27,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Enter the number of recipe to delete:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRecipeNum" HorizontalAlignment="Left" Margin="237,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
+        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,90,443,236"/>
+        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="27,64,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

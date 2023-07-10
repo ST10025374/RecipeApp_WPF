@@ -25,6 +25,9 @@ namespace WPFdemo
 
             _recipes = book;
 
+            //Sort Alphabetically
+            _recipes.Sort((Recipe1, Recipe2) => string.Compare(Recipe1.RecipeName, Recipe2.RecipeName));
+
             for (int i = 0; i < _recipes.Count; i++)
             {
                 int number = i + 1;

@@ -68,7 +68,8 @@ namespace WPFdemo
             /// <returns></returns>
             public string OutputString()
             {
-                return IngredientQuantity + " " + UnitOfMeasurement + " of " + IngredientName;
+                return IngredientQuantity + " " + UnitOfMeasurement + " of " + IngredientName 
+                + " Calories: " + IngredientCalories + " Food Group: " + IngredientFoodGroup;
             }
         }
     }

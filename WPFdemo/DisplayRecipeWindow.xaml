@@ -11,9 +11,10 @@
         <ListBox x:Name="lstRecipeList" Margin="10,68,263,172"/>
         <Label Content="Enter recipe number:" HorizontalAlignment="Left" Margin="228,68,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.812,0.618"/>
         <TextBox x:Name="txtRecipeNum" HorizontalAlignment="Left" Margin="356,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="22" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
-        <Button x:Name="btnDisplayRecipeSelected" Content="Display Recipe" 
-            HorizontalAlignment="Left" Margin="234,99,0,0" 
-            VerticalAlignment="Top" Width="110" 
-            Click="btnDisplayRecipeSelected_Click"/>
+        <Button x:Name="btnDisplayRecipeSelected" Content="DISPLAY RECIPE" 
+            HorizontalAlignment="Left" Margin="234,107,0,0" 
+            VerticalAlignment="Top" Width="167" 
+            Click="btnDisplayRecipeSelected_Click" Height="28"/>
+        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.812,0.618"/>
     </Grid>
 </Window>
