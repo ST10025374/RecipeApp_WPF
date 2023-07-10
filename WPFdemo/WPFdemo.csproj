@@ -61,6 +61,9 @@
     <Compile Include="DisplayOneRecipe.xaml.cs">
       <DependentUpon>DisplayOneRecipe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FilterRecipeWindow.xaml.cs">
+      <DependentUpon>FilterRecipeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IngredientsClass.cs" />
     <Compile Include="RecipeClass.cs" />
     <Compile Include="ScaleUpRecipeWindow.xaml.cs">
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DisplayRecipeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilterRecipeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

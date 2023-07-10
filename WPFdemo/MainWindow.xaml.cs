@@ -99,18 +99,6 @@ namespace WPFdemo
 
         //-------------------------------------------------------------------//
         /// <summary>
-        /// Create Menu Window
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CreateMenu_Click(object sender, RoutedEventArgs e)
-        {
-            //CreateMenuWindow createMenuWindow = new CreateMenuWindow();
-            //createMenuWindow.Show();
-        }
-
-        //-------------------------------------------------------------------//
-        /// <summary>
         /// Exit Program Option Window
         /// </summary>
         /// <param name="sender"></param>

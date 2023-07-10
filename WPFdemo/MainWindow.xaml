@@ -20,7 +20,6 @@
                 <MenuItem Header="Scale Up Recipe" Click="ScaleUpRecipe_Click"/>
                 <MenuItem Header="Delete Recipe" Click="DeleteRecipe_Click"/>
                 <MenuItem Header="Filter Recipes" Click="FilterRecipes_Click"/>
-                <MenuItem Header="Create Menu" Click="CreateMenu_Click"/>
             </MenuItem>
             <MenuItem Header="Exit" Click="Exit_Click"/>
         </Menu>

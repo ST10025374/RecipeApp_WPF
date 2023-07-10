@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFdemo.FilterRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFdemo"
+        mc:Ignorable="d"
+        Title="FilterRecipeWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnDeleteRecipe" Content="FILTER" HorizontalAlignment="Left" Margin="280,46,0,0" VerticalAlignment="Top" Width="77" Click="DeleteButton_Click" Height="24"/>
+
+        <Label Content="Enter Recipe Name:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRecipeName" HorizontalAlignment="Left" Margin="145,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
+        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,90,443,236"/>
+        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="27,64,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
