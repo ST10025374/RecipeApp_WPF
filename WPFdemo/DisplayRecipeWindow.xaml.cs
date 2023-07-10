@@ -9,7 +9,6 @@ namespace WPFdemo
     /// </summary>
     public partial class DisplayRecipeWindow : Window
     {
-
         /// <summary>
         /// RecipeBook Object
         /// </summary>

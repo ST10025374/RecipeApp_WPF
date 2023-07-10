@@ -93,8 +93,9 @@ namespace WPFdemo
         /// <param name="e"></param>
         private void FilterRecipes_Click(object sender, RoutedEventArgs e)
         {
-            //FilterRecipesWindow filterRecipesWindow = new FilterRecipesWindow();
-            //filterRecipesWindow.Show();
+            FilterRecipeWindow filterRecipeWindow = new FilterRecipeWindow(_recipes);
+            filterRecipeWindow.Show();
+            Hide(); 
         }
 
         //-------------------------------------------------------------------//

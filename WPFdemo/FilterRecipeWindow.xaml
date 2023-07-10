@@ -5,14 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFdemo"
         mc:Ignorable="d"
-        Title="FilterRecipeWindow" Height="450" Width="800">
+        Title="FilterRecipeWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <Button x:Name="btnDeleteRecipe" Content="FILTER" HorizontalAlignment="Left" Margin="280,46,0,0" VerticalAlignment="Top" Width="77" Click="DeleteButton_Click" Height="24"/>
+        <Button x:Name="btnFilterRecipe" Content="FILTER" HorizontalAlignment="Left" Margin="280,46,0,0" VerticalAlignment="Top" Width="77" Height="51" Click="btnFilterRecipe_Click"/>
 
         <Label Content="Enter Recipe Name:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtRecipeName" HorizontalAlignment="Left" Margin="145,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
-        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="27,90,443,236"/>
-        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="27,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRecipeName" HorizontalAlignment="Left" Margin="145,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="18,132,443,167"/>
+        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top"/>
+        <Label Content="Food group:" HorizontalAlignment="Left" Margin="69,71,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
+        <ComboBox x:Name="ComboBoxFoodGroup" HorizontalAlignment="Left" Margin="145,78,0,0" VerticalAlignment="Top" Width="128" Height="22" RenderTransformOrigin="0.5,0.5">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.337"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="Vegetable" />
+            <ComboBoxItem Content="Fruit" />
+            <ComboBoxItem Content="Grain" />
+            <ComboBoxItem Content="Dairy" />
+            <ComboBoxItem Content="Protein" />
+            <ComboBoxItem Content="Spice" />
+            <ComboBoxItem Content="Herb" />
+            <ComboBoxItem Content="Oil" />
+            <ComboBoxItem Content="Water" />
+        </ComboBox>
 
     </Grid>
 </Window>
