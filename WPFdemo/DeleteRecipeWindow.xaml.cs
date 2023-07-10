@@ -19,7 +19,7 @@ namespace WPFdemo
     /// </summary>
     public partial class DeleteRecipeWindow : Window
     {
-        public DeleteRecipeWindow()
+        public DeleteRecipeWindow(List<RecipeClass> _recipes)
         {
             InitializeComponent();
         }

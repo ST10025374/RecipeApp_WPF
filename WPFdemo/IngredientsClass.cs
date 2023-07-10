@@ -9,11 +9,6 @@ namespace WPFdemo
         public class IngredientsClass
         {
             /// <summary>
-            /// Store the number of ingredients of each recipe
-            /// </summary>
-            public int NumberOfIngredients { get; set; } = 0;
-
-            /// <summary>
             /// Store Ingredient Name
             /// </summary>
             public string IngredientName { get; set; } = string.Empty;
@@ -51,21 +46,30 @@ namespace WPFdemo
             /// <summary>
             /// Parameterized constructor
             /// </summary>
-            /// <param name="numberOfIngredients"></param>
             /// <param name="ingredientName"></param>
             /// <param name="ingredientQuantity"></param>
             /// <param name="unitOfMeasurement"></param>
             /// <param name="ingredientCalories"></param>
             /// <param name="ingredientFoodGroup"></param>
-            public IngredientsClass(int numberOfIngredients, string ingredientName, double ingredientQuantity, string unitOfMeasurement, int ingredientCalories, string ingredientFoodGroup)
+            public IngredientsClass(string ingredientName, double ingredientQuantity,
+                string unitOfMeasurement, int ingredientCalories, string ingredientFoodGroup)
             {
-                NumberOfIngredients = numberOfIngredients;
                 IngredientName = ingredientName;
                 IngredientQuantity = ingredientQuantity;
                 UnitOfMeasurement = unitOfMeasurement;
                 IngredientCalories = ingredientCalories;
                 IngredientFoodGroup = ingredientFoodGroup;
-            }                        
+            }
+
+            //---------------------------------------------------------------------------------------//
+            /// <summary>
+            /// Return String Of Ing Details
+            /// </summary>
+            /// <returns></returns>
+            public string OutputString()
+            {
+                return IngredientQuantity + " " + UnitOfMeasurement + " of " + IngredientName;
+            }
         }
     }
 //---------------------------------------------------------< END >-----------------------------------------------------//

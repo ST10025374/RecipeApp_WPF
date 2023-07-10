@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WPFdemo
 {
@@ -20,6 +8,11 @@ namespace WPFdemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        private List<RecipeClass> _recipes;
+
         //-------------------------------------------------------------------//
         /// <summary>
         /// Default Constructor
@@ -27,6 +20,17 @@ namespace WPFdemo
         public MainWindow()
         {
             InitializeComponent();
+            _recipes = new List<RecipeClass>();
+        }
+
+        //-------------------------------------------------------------------//
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public MainWindow(List<RecipeClass> book)
+        {
+            InitializeComponent();
+            _recipes = book;
         }
 
         //-------------------------------------------------------------------//
@@ -37,8 +41,9 @@ namespace WPFdemo
         /// <param name="e"></param>
         private void StoreRecipe_Click(object sender, RoutedEventArgs e)
         {
-            StoreRecipeWindow storeRecipeWindow = new StoreRecipeWindow();
+            StoreRecipeWindow storeRecipeWindow = new StoreRecipeWindow(_recipes);
             storeRecipeWindow.Show();
+            Hide();
         }
 
         //-------------------------------------------------------------------//
@@ -48,9 +53,10 @@ namespace WPFdemo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DisplayRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            DisplayRecipeWindow displayRecipeWindow = new DisplayRecipeWindow();
+        {         
+            DisplayRecipeWindow displayRecipeWindow = new DisplayRecipeWindow(_recipes);
             displayRecipeWindow.Show();
+            Hide();
         }
 
         //-------------------------------------------------------------------//
@@ -61,8 +67,9 @@ namespace WPFdemo
         /// <param name="e"></param>
         private void ScaleUpRecipe_Click(object sender, RoutedEventArgs e)
         {
-            ScaleUpRecipeWindow scaleUpRecipeWindow = new ScaleUpRecipeWindow();
+            ScaleUpRecipeWindow scaleUpRecipeWindow = new ScaleUpRecipeWindow(_recipes);
             scaleUpRecipeWindow.Show();
+            Hide();
         }
 
         //-------------------------------------------------------------------//
@@ -73,8 +80,9 @@ namespace WPFdemo
         /// <param name="e"></param>
         public void DeleteRecipe_Click(object sender, RoutedEventArgs e)
         {
-            DeleteRecipeWindow deleteRecipeWindow = new DeleteRecipeWindow();
+            DeleteRecipeWindow deleteRecipeWindow = new DeleteRecipeWindow(_recipes);
             deleteRecipeWindow.ShowDialog();
+            Hide();
         }
 
         //-------------------------------------------------------------------//

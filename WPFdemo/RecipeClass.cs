@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WPFdemo
 {
@@ -16,17 +12,12 @@ namespace WPFdemo
         /// <summary>
         /// Store Recipe Steps Descriptions
         /// </summary>
-        public List<string> StepDescriptionsList = new List<string>();
+        public List<string> StepDescriptionsList;
 
         /// <summary>
         /// Store Recipe Ingredients
         /// </summary>
-        public List<IngredientsClass> IngredientsList = new List<IngredientsClass>();
-
-        /// <summary>
-        /// List to store each recipe 
-        /// </summary>
-        public List<RecipeClass> RecipeList = new List<RecipeClass>();
+        public List<IngredientsClass> IngredientsList;
 
         //---------------------------------------------------------------------------------------//
         /// <summary>

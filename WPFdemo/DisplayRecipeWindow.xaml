@@ -5,32 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFdemo"
         mc:Ignorable="d"
-        Title="DisplayRecipeWindow" Height="450" Width="800">
+        Title="DisplayRecipeWindow" Height="450" Width="800" Closed="Window_Closed">
 
-    <Grid>
-        <Menu Grid.ColumnSpan="3" RenderTransformOrigin="0.648,0.5" Height="434" VerticalAlignment="Top">
-            <MenuItem Header="Recipe">
-                <MenuItem Header="Store Recipe"/>
-                <MenuItem Header="Display Recipe"/>
-                <MenuItem Header="Scale Up Recipe"/>
-                <MenuItem Header="Delete Recipe"/>
-                <MenuItem Header="Filter Recipes" />
-                <MenuItem Header="Create Menu"/>
-            </MenuItem>
-            <MenuItem Header="Exit" />
-        </Menu>
-        <Button Content="Display Recipe" HorizontalAlignment="Left" Margin="234,107,0,0" VerticalAlignment="Top" Width="120" Click="DisplayRecipeButton_Click"/>
-
-        <ListView HorizontalAlignment="Left" Margin="35,58,0,0" VerticalAlignment="Top" Width="171" Height="200" ItemsSource="{Binding Recipes}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Recipe Name" DisplayMemberBinding="{Binding Name}" Width="150"/>
-              
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Label Content="Enter recipe number:" HorizontalAlignment="Left" Margin="234,57,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.237,0.579"/>
-        <TextBox HorizontalAlignment="Left" Margin="234,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.683,0.448"/>
-
+    <Grid Margin="0,0,314,0">
+        <ListBox x:Name="lstRecipeList" Margin="10,68,263,172"/>
+        <Label Content="Enter recipe number:" HorizontalAlignment="Left" Margin="228,68,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="0.812,0.618"/>
+        <TextBox x:Name="txtRecipeNum" HorizontalAlignment="Left" Margin="356,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="22" PreviewTextInput="txtRecipeNum_PreviewTextInput"/>
+        <Button x:Name="btnDisplayRecipeSelected" Content="Display Recipe" 
+            HorizontalAlignment="Left" Margin="234,99,0,0" 
+            VerticalAlignment="Top" Width="110" 
+            Click="btnDisplayRecipeSelected_Click"/>
     </Grid>
 </Window>

@@ -7,22 +7,13 @@
         mc:Ignorable="d"
         Title="ScaleUpRecipeWindow" Height="450" Width="800">
     <Grid>
-        <Menu Grid.ColumnSpan="3" RenderTransformOrigin="0.648,0.5" Height="434" VerticalAlignment="Top">
-            <MenuItem Header="Recipe">
-                <MenuItem Header="Store Recipe"/>
-                <MenuItem Header="Display Recipe"/>
-                <MenuItem Header="Scale Up Recipe"/>
-                <MenuItem Header="Delete Recipe"/>
-                <MenuItem Header="Filter Recipes" />
-                <MenuItem Header="Create Menu"/>
-            </MenuItem>
-            <MenuItem Header="Exit" />
-        </Menu>
-
-        <Button Content="Scale Up Recipe" HorizontalAlignment="Left" Margin="31,100,0,0" VerticalAlignment="Top" Width="120"/>
-
-        <Label Content="Enter the scale factor:" HorizontalAlignment="Left" Margin="27,46,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ScaleFactorTextBox" HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.225,0.448"/>
+        <Button Content="Scale Up Recipe" HorizontalAlignment="Left" Margin="72,137,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="211,47,419,227"/>
+        <Label Content="Enter Scale Factor: &#xD;&#xA;Example: 3 " HorizontalAlignment="Left" Margin="55,88,0,0" VerticalAlignment="Top" Width="106" Height="49"/>
+        <TextBox x:Name="ScaleFactorTextBox" HorizontalAlignment="Left" Margin="166,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448"/>
+        <Label Content="Enter Recipe Number: " HorizontalAlignment="Left" Margin="37,46,0,0" VerticalAlignment="Top" Width="124" Height="37"/>
+        <TextBox x:Name="ScaleFactorTextBox_Copy" HorizontalAlignment="Left" Margin="166,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.225,0.448"/>
+        <Label Content="Recipe List" HorizontalAlignment="Left" Margin="211,19,0,0" VerticalAlignment="Top" Width="124" Height="37"/>
     </Grid>
 
 </Window>

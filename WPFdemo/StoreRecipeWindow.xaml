@@ -24,23 +24,20 @@
         </Menu>
 
         <Label Content="Enter name of recipe:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.763,-0.268" Grid.Column="1" Height="26" Width="122"/>
-        <Label Content="Enter number of ingredients:" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
         <Label Content="Ingredient name:" HorizontalAlignment="Left" Margin="110,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,-0.461" Grid.Column="2" Height="26" Width="100"/>
-        <Label Content="Enter DETAILS for Ingredient: " HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
-        <TextBox x:Name="txtIngName" Grid.Column="2" HorizontalAlignment="Left" Margin="215,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" RenderTransformOrigin="0.725,0.558" TextChanged="txtIngName_TextChanged"/>
-        <TextBox x:Name="txtRecipeName" Grid.Column="2" HorizontalAlignment="Left" Margin="19,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" TextChanged="txtBoxChangedRecipeName"/>
-        <TextBox x:Name="txtIngredient" Grid.Column="2" HorizontalAlignment="Left" Margin="19,88,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38" Height="18" TextChanged="txtIngredientNum_TextChanged"/>
+        <TextBox x:Name="txtIngName" Grid.Column="2" HorizontalAlignment="Left" Margin="215,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" RenderTransformOrigin="0.725,0.558"/>
+        <TextBox x:Name="txtRecipeName" Grid.Column="2" HorizontalAlignment="Left" Margin="19,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18"/>
         <Label Content="Unit of measurement:" HorizontalAlignment="Left" Margin="86,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,-0.461" Grid.Column="2" Height="26" Width="124"/>
-        <ComboBox x:Name="ComboBoxUnit" Grid.Column="2" HorizontalAlignment="Left" Margin="215,180,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.833,0.456" SelectionChanged="cmdBoxUnit">
+        <ComboBox x:Name="ComboBoxUnit" Grid.Column="2" HorizontalAlignment="Left" Margin="215,180,0,0" VerticalAlignment="Top" Width="120" Height="22" RenderTransformOrigin="0.833,0.456">
             <ComboBoxItem Content="Gram (g)"/>
             <ComboBoxItem Content="Tablespoon (tbsp)"/>
             <ComboBoxItem Content="Cup (c)"/>
         </ComboBox>
         <Label Grid.Column="2" Content="Quantity:" HorizontalAlignment="Left" Margin="148,201,0,0" VerticalAlignment="Top" Height="26" Width="58" RenderTransformOrigin="0.483,1.002"/>
         <Label Grid.Column="2" Content="Calories:" HorizontalAlignment="Left" Margin="151,225,0,0" VerticalAlignment="Top" Height="26" Width="55" RenderTransformOrigin="0.618,0.348"/>
-        <TextBox x:Name="txtBoxCalories" Grid.Column="2" HorizontalAlignment="Left" Margin="214,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" IsManipulationEnabled="True" TextChanged="txtBoxCaloriesTextChange"/>
+        <TextBox x:Name="txtBoxCalories" Grid.Column="2" HorizontalAlignment="Left" Margin="214,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="18" IsManipulationEnabled="True" PreviewTextInput="txtBoxCalories_PreviewTextInput"/>
         <Label Grid.Column="2" Content="Food group:" HorizontalAlignment="Left" Margin="140,251,0,0" VerticalAlignment="Top" Height="26" Width="75"/>
-        <ComboBox x:Name="ComboBoxFoodGroup" Grid.Column="2" HorizontalAlignment="Left" Margin="215,258,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="cmdFoodGroup">
+        <ComboBox x:Name="ComboBoxFoodGroup" Grid.Column="2" HorizontalAlignment="Left" Margin="215,258,0,0" VerticalAlignment="Top" Width="120" Height="22">
             <ComboBoxItem Content="Vegetable" />
             <ComboBoxItem Content="Fruit" />
             <ComboBoxItem Content="Grain" />
@@ -51,16 +48,14 @@
             <ComboBoxItem Content="Oil" />
             <ComboBoxItem Content="Water" />
         </ComboBox>
-        <Label Content="Enter number of STEPS:" HorizontalAlignment="Left" Margin="17,279,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="138"/>
-        <TextBox x:Name="txtBoxStepsNum" Grid.Column="1" HorizontalAlignment="Left" Margin="150,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38" Height="18" TextChanged="txtStepsNumTextChanged"/>
         <Label Content="Enter description of STEP:" HorizontalAlignment="Left" Margin="16,305,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="162"/>
-        <TextBox x:Name="txtBoxDescription" HorizontalAlignment="Left" Height="37" Margin="17,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="429" Grid.Column="1" Grid.ColumnSpan="2" TextChanged="TextBox_DescriptionTextChanged"/>
+        <TextBox x:Name="txtBoxDescription" HorizontalAlignment="Left" Height="37" Margin="17,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="429" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Button x:Name="btnSaveIngredient" Grid.Column="2" Content="Save" HorizontalAlignment="Left" Margin="348,259,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnSaveIngredientDataClick"/>
         <Button Grid.Column="1" Content="Save STEP Description" HorizontalAlignment="Left" Margin="17,388,0,0" VerticalAlignment="Top" Width="236" Height="20" Grid.ColumnSpan="2" Click="Button_SaveStepDescrClick"/>
         <Button Grid.Column="2" Content="Save recipe" HorizontalAlignment="Left" Margin="348,334,0,0" VerticalAlignment="Top" Width="110" Height="20" Background="#FFCEC600" Click="btnSaveRecipeClick"/>
-        <TextBox x:Name="txtBoxQuantity" Grid.Column="2" HorizontalAlignment="Left" Margin="215,207,0,0" TextWrapping="Wrap" Text="" Width="38" Height="18" VerticalAlignment="Top" TextChanged="txtBoxQuantityTextChange"/>
-        <Label x:Name="lblIngNumMessage" Grid.Column="1" Content="0" HorizontalAlignment="Left" Margin="172,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblStepMessage" Grid.Column="1" Content="0" HorizontalAlignment="Left" Margin="162,305,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.364,2.043"/>
+        <TextBox x:Name="txtBoxQuantity" Grid.Column="2" HorizontalAlignment="Left" Margin="215,207,0,0" TextWrapping="Wrap" Text="" Width="38" Height="18" VerticalAlignment="Top" PreviewTextInput="txtBoxQuantity_PreviewTextInput"/>
+        <Label x:Name="lblStepMessage" Grid.Column="1" Content="1" HorizontalAlignment="Left" Margin="162,305,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.364,2.043"/>
+        <ListBox x:Name="DisplayIngrediants" Grid.Column="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="348,43,10,186"/>
 
 
 
