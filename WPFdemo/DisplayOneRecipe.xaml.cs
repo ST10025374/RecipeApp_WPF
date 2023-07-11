@@ -33,13 +33,13 @@ namespace WPFdemo
             for (int i = 0; i < _displayRecipe.StepDescriptionsList.Count; i++)
             {
                 int number = i + 1;
-                lstSteps.Items.Add(number.ToString() + _displayRecipe.StepDescriptionsList[i]);
+                lstSteps.Items.Add(number.ToString() + " _ " + _displayRecipe.StepDescriptionsList[i]);
             }
 
             for (int i = 0; i < _displayRecipe.IngredientsList.Count; i++)
             {
                 int number = i + 1;
-                lstIngrediants.Items.Add(number.ToString() + _displayRecipe.IngredientsList[i].OutputString());
+                lstIngrediants.Items.Add(number.ToString() + " - " + _displayRecipe.IngredientsList[i].OutputString());
             }
 
         }
