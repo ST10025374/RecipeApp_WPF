@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="FilterRecipeWindow" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <Button x:Name="btnFilterRecipe" Content="FILTER" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Width="154" Height="19" Click="btnFilterRecipe_Click"/>
+        <Button x:Name="btnFilterRecipe" Content="FILTER" HorizontalAlignment="Left" Margin="367,170,0,0" VerticalAlignment="Top" Width="154" Height="19" Click="btnFilterRecipe_Click"/>
 
-        <Label Content="Enter Recipe Name:" HorizontalAlignment="Left" Margin="199,82,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtRecipeName" HorizontalAlignment="Center" Margin="0,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <Label Content="Enter Recipe Name:" HorizontalAlignment="Left" Margin="243,82,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRecipeName" HorizontalAlignment="Left" Margin="367,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
         <ListBox x:Name="lstRecipeList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,81,614,176"/>
         <Label Content="Recipe List" HorizontalAlignment="Left" Margin="20,55,0,0" VerticalAlignment="Top"/>
-        <Label Content="Food group:" HorizontalAlignment="Left" Margin="236,124,0,0" VerticalAlignment="Top" Height="26" Width="76" RenderTransformOrigin="0.658,0.54"/>
-        <ComboBox x:Name="ComboBoxFoodGroup" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Width="154" Height="22" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Food group:" HorizontalAlignment="Left" Margin="280,124,0,0" VerticalAlignment="Top" Height="26" Width="76" RenderTransformOrigin="0.658,0.54"/>
+        <ComboBox x:Name="ComboBoxFoodGroup" HorizontalAlignment="Left" Margin="367,127,0,0" VerticalAlignment="Top" Width="154" Height="22" RenderTransformOrigin="0.5,0.5">
             <ComboBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,6 +33,7 @@
             <ComboBoxItem Content="Oil" />
             <ComboBoxItem Content="Water" />
         </ComboBox>
+        <Button x:Name="btnReset" Content="RESET" HorizontalAlignment="Left" Margin="202,170,0,0" VerticalAlignment="Top" Width="154" Height="19" Click="btnResetRecipe_Click"/>
 
     </Grid>
 </Window>

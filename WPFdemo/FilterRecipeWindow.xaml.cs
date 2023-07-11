@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace WPFdemo
-{   
+{
     /// <summary>
     /// Interaction logic for FilterRecipeWindow.xaml
     /// </summary>
@@ -67,13 +67,14 @@ namespace WPFdemo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnFilterRecipe_Click(object sender, RoutedEventArgs e)
-        {          
+        {
             string RecName = txtRecipeName.Text;
 
             string FoodGroup = ComboBoxFoodGroup.Text;
 
             lstRecipeList.Items.Clear();
-          
+
+            /*
             for (int i = 0; i < _recipes.Count; i++)
             {
                 if (RecName.Equals(_recipes[i].RecipeName))
@@ -82,8 +83,32 @@ namespace WPFdemo
                     string ouput = number + ": " + _recipes[i].RecipeName;
                     lstRecipeList.Items.Add(ouput);
                 }
-                else if (!RecName.Equals(_recipes[i].RecipeName))
+                
+                for (int j = 0; j < _recipes[i].IngredientsList.Count; j++)
                 {
+                    if (FoodGroup.Equals(_recipes[i].IngredientsList[j].IngredientFoodGroup))
+                    {
+                         int number = i + 1;
+                         string ouput = number + ": " + _recipes[i].RecipeName;
+                         lstRecipeList.Items.Add(ouput);
+                    }
+                }             
+            }
+            */
+            for (int i = 0; i < _recipes.Count; i++)
+            {
+                bool isAdded = false;
+
+                if (RecName.Equals(_recipes[i].RecipeName))
+                {
+                    int number = i + 1;
+                    string ouput = number + ": " + _recipes[i].RecipeName;
+                    lstRecipeList.Items.Add(ouput);
+                    isAdded = true;
+                }
+
+                if (!isAdded)
+                {                 
                     for (int j = 0; j < _recipes[i].IngredientsList.Count; j++)
                     {
                         if (FoodGroup.Equals(_recipes[i].IngredientsList[j].IngredientFoodGroup))
@@ -91,9 +116,31 @@ namespace WPFdemo
                             int number = i + 1;
                             string ouput = number + ": " + _recipes[i].RecipeName;
                             lstRecipeList.Items.Add(ouput);
+                            break;
                         }
                     }
                 }
+            }
+        }
+
+        //-----------------------------------------------------------//
+        /// <summary>
+        /// Reset to Orifinal List
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnResetRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            lstRecipeList.Items.Clear();
+
+            //Sort Alphabetically
+            _recipes.Sort((Recipe1, Recipe2) => string.Compare(Recipe1.RecipeName, Recipe2.RecipeName));
+
+            for (int i = 0; i < _recipes.Count; i++)
+            {
+                int number = i + 1;
+                string ouput = number + ": " + _recipes[i].RecipeName;
+                lstRecipeList.Items.Add(ouput);
             }
         }
     }
