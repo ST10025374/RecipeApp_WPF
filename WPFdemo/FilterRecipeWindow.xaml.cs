@@ -67,16 +67,16 @@ namespace WPFdemo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnFilterRecipe_Click(object sender, RoutedEventArgs e)
-        {
-            lstRecipeList.Items.Clear();
-
+        {          
             string RecName = txtRecipeName.Text;
 
             string FoodGroup = ComboBoxFoodGroup.Text;
 
+            lstRecipeList.Items.Clear();
+          
             for (int i = 0; i < _recipes.Count; i++)
             {
-                if (RecName.Equals(_recipes[i].RecipeName) )                 
+                if (RecName.Equals(_recipes[i].RecipeName))
                 {
                     int number = i + 1;
                     string ouput = number + ": " + _recipes[i].RecipeName;
